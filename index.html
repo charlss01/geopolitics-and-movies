@@ -1,0 +1,770 @@
+<html>
+  <link rel="icon" href="thumbnails/Netflix_2015_N_logo.svg">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Netflix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
+  <style>
+/* CSS VARIABLES */
+:root {
+  --primary: #141414;
+  --light: #F3F3F3;
+  --dark: 	#686868;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  padding-top: 60px;  
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+}
+a{
+  font-size: 2px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+}
+/* HEADER */
+header {
+  padding: 20px 20px 0 20px;
+  position: fixed;
+  top: 0;
+  display: grid;  
+  grid-gap:5px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 
+   "nt mn mn sb . . . "; 
+  background-color: var(--primary);
+  width: 100%;
+  margin-bottom: 0px;  
+}
+
+.netflixLogo {
+  grid-area: nt;
+  object-fit: cover;
+  width: 100px;
+  max-height: 100%;
+  
+  padding-left: 30px;
+  padding-top: 0px;  
+}
+
+.netflixLogo img {  
+  height: 35px;     
+}
+
+#logo {
+  color: #E50914;  
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.main-nav {
+  grid-area: mn;
+  padding: 0 30px 0 20px;
+}
+
+.main-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;  
+}
+
+.main-nav a:hover {
+  color: var(--dark);
+}
+
+.sub-nav {
+  grid-area: sb;
+  padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sub-nav a:hover {
+  color: var(--dark);
+}
+
+
+/* MAIN CONTIANER */
+.main-container {
+  padding: 50px;
+}
+
+.box {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+  transition: transform .3s;  
+}
+
+.box a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);  
+  transform: scale(1.4);
+}
+
+.box img {
+  border-radius: 2px;
+}
+
+/* LINKS */
+.link {
+  padding: 50px;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.sub-links a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.logos a{
+  padding: 10px;
+}
+
+.logo {
+  color: var(--dark);
+}
+
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  margin: 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 900px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+}
+
+@media(max-width: 700px) {
+
+  header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "nt nt nt  .  .  . sb . . . "
+    "mn mn mn mn mn mn  mn mn mn mn";
+  }
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+   
+}
+
+@media(max-width: 500px) {
+
+  .wrapper {
+    font-size: 15px;
+  }
+
+  header {
+    margin: 0;
+    padding: 20px 0 0 0;
+    position: static;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    "nt"    
+    "mn"
+    "sb";
+    text-align: center;
+  }
+
+  .netflixLogo {
+    max-width: 100%;
+    margin: auto;
+    padding-right: 20px;
+  }
+
+  .main-nav {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+ 
+
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;    
+  }
+
+  .box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);  
+    transform: scale(1.2);
+  }
+
+  .logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
+  }  
+}
+
+
+
+.modal:target{
+  visibility: visible;
+  opacity: 1;
+}
+
+a{
+  font-size: 21px;
+  font-weight: 600;
+}
+.pengo{
+  width: 100%;
+  object-fit: cover;
+}
+.imagerrs{
+align-items: center;
+  align-self: center;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+.card {
+      width: 96%;
+      margin: 20px auto;
+      padding: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      background: #000000;
+      text-align: center;
+    }
+
+    .video-container {
+      margin-top: 20px;
+      display: none;
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+  height: 500px;
+      border: none;
+    }
+.video-play-button {
+  font-size: 2rem;
+  color: white;
+  background-color: #000000; 
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.video-play-button:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalcontent {
+  background: #111;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modalclose {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modalclose:hover {
+  transform: scale(1.2);
+}
+
+.imagerrs {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+
+.video-container {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+.video-play-button {
+  font-size: 3rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.video-play-button:hover {
+  transform: scale(1.1);
+}
+
+
+    
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header>
+      <div class="netflixLogo">
+        <a id="logo" href="#home"><img src="thumbnails/Netflix_2015_logo.svg" alt="Logo Image"></a>
+      </div>      
+      <nav class="main-nav">                
+        <a href="#home">Movie 1</a>
+        <a href="#modalboxer">Movie 2</a>
+        <a href="#movies">Movie 3</a>
+        <a href="#originals">Movie 4</a>      
+      </nav>
+      <nav class="sub-nav">
+        <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+        <a href="#">Account</a>        
+      </nav>      
+    </header>
+    <!-- END OF HEADER -->
+    
+    <!-- MAIN CONTAINER -->
+    <section class="main-container" >
+      <div class="location" id="home">
+          <h1 id="home">The Handmaids Tale</h1>
+          <div class="box">
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE">
+            <img src="thumbnails/1.jpg" ></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/2.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/3.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/4.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/5.jpg" alt=""></a>
+
+               
+          </div>
+      
+      
+      <h1 id="modalboxer">Snowpiercer</h1>
+      <div class="box">
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/6.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/7.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/10.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/11.jpg" alt=""></a>  
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/10.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/11.jpg" alt=""></a> 
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/12.jpg" alt=""></a> 
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/13.jpg" alt=""></a>
+
+            <a href="#modalboxv2"
+            data-title="Snowpiercer"
+            data-description="Snowpiercer is an allegory of class culture..."
+            data-img="thumbnails/1.jpg"
+            data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+            ><img src="thumbnails/14.jpg" alt=""></a> 
+
+      </div>
+      
+
+      <h1 id="movies">Blade Runner 2049</h1>
+      <div class="box">
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/15.jpg" alt=""></a> 
+
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/16.jpg" alt=""></a> 
+
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/17.jpg" alt=""></a> 
+
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/18.jpg" alt=""></a> 
+
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/19.jpg" alt=""></a> 
+
+     <a href="#modalboxv2"
+     data-title="Snowpiercer"
+     data-description="Snowpiercer is an allegory of class culture..."
+     data-img="thumbnails/1.jpg"
+     data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+     ><img src="thumbnails/20.jpg" alt=""></a> 
+     
+</div>
+      <h1 id="originals">Fallout</h1>
+      <div class="box">
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/21.jpg" alt=""></a>
+
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/22.jpg" alt=""></a>  
+
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/23.jpg" alt=""></a> 
+
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/24.jpg" alt=""></a> 
+      
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/25.jpg" alt=""></a> 
+      
+      <a href="#modalboxv2"
+      data-title="Snowpiercer"
+      data-description="Snowpiercer is an allegory of class culture..."
+      data-img="thumbnails/1.jpg"
+      data-video="https://www.youtube.com/embed/M7lc1UVf-VE"
+      ><img src="thumbnails/26.jpg" alt=""></a> 
+      </div>
+     
+    <!-- END OF MAIN CONTAINER -->
+
+
+    <!-- LINKS -->
+   
+    <!-- END OF LINKS -->
+
+   
+    <footer>
+      <p>Tortilla Team Netflix, Inc.</p>
+      <p>Carlos, Juls, Isabella, Ximena, Mariana </p>
+    </footer>
+  </div>
+     <div class="wrapper">
+</div>
+
+<!-- Modal -->
+  <div id="modalboxv2" class="modal">
+<div class="modalcontent">
+<h1>Card 1</h1>
+<p>SNOWPIERCER IS AN ALLEGORY OF CLASS CULTURE AND HOW TENSIONS INNATE WITHIN LEAD TO RESENTMENT, REBELLION, AND EVENTUALLY, CHANGE OR REVOLUTION. 
+  In the series, this allegory is shown through the division of a train by social classes, the train symbolising the global structure of POWER. 
+  The rich live in the front cars, surrounded by luxury, while the poor are confined to the tail surviving in miserable conditions.
+  
+</p>
+<img src="thumbnails/1.jpg" alt="" class="imagerrs">
+<a href="#" class="modalclose" onclick="closeModal()">&times;</a>
+<div class="card">
+    <h2>Video</h2>
+    <button onclick="document.getElementById('video1').style.display='block'; this.style.display='none';" class="video-play-button">&#9658;</button>
+
+    <div class="video-container" id="video1">
+      <iframe id="ytplayer" type="text/html" width="100%" 
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  frameborder="0"></iframe>
+</div> </div></div></div> 
+ <!-- Modal -->
+
+<script>
+  function closeModal() {
+    const iframe = document.getElementById('ytplayer');
+
+    // Save the src so we can reset it later
+    const src = iframe.src;
+
+    // Temporarily set src to empty to stop video
+    iframe.src = '';
+    
+    // Reassign the original src if needed (e.g., to show it again later)
+    setTimeout(() => {
+      iframe.src = src;
+    }, 100);
+  }
+</script>
+<script>
+const modal = document.getElementById('movieModal');
+const title = document.getElementById('modalTitle');
+const desc = document.getElementById('modalDesc');
+const img = document.getElementById('modalImg');
+const video = document.getElementById('modalVideo');
+const videoContainer = document.getElementById('videoContainer');
+const playButton = document.getElementById('playButton');
+const closeModal = document.getElementById('closeModal');
+
+let currentVideo = "";
+
+// Open modal
+document.querySelectorAll('.movie-card').forEach(card => {
+  card.addEventListener('click', e => {
+    e.preventDefault();
+    title.textContent = card.dataset.title;
+    desc.textContent = card.dataset.description;
+    img.src = card.dataset.img;
+    currentVideo = card.dataset.video;
+    video.src = "";
+    playButton.style.display = 'block';
+    videoContainer.style.display = 'none';
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // disable background scroll
+  });
+});
+
+// Play video
+playButton.addEventListener('click', () => {
+  video.src = `${currentVideo}?autoplay=1`;
+  playButton.style.display = 'none';
+  videoContainer.style.display = 'block';
+});
+
+// Close modal
+closeModal.addEventListener('click', e => {
+  e.preventDefault();
+  closeMovieModal();
+});
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) closeMovieModal();
+});
+
+function closeMovieModal() {
+  modal.classList.remove('show');
+  video.src = "";
+  document.body.style.overflow = 'auto';
+}
+</script>
+
+ 
+
+</body>
+</html>
